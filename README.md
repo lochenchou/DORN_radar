@@ -20,7 +20,7 @@ Interpolation code is from https://gist.github.com/ialhashim/be6235489a9c43c6d24
 
 ### Download pretrained resnet101 weights
 
-Please download the pretrained ResNet101 weight file and modify the weight path in `model/resnet.py`.
+Please download the pretrained ResNet101 weight file from http://sceneparsing.csail.mit.edu/model/pretrained_resnet/resnet101-imagenet.pth and modify the weight path in `model/resnet.py`.
 
 ### Train baseline model and proposed model on nuScenes
 
