@@ -16,6 +16,7 @@ Please check `Dockerfile` for environment settings and python packages
 Use `gen_interpolation.py` to generate sparse depth, dense depth and height-extended radar depth for training and evaluation. Generated depths will be saved in the same data_root directory of nuScenes sample, and please remember to modify the dir path in the .py. The number of CPU cores is set to 25 for faster data generating. 
 
 pypardiso is highly recommended, otherwise one could have similar result via spsolve in scipy but with much slower speed.
+Interpolation code is from https://gist.github.com/ialhashim/be6235489a9c43c6d240e8331836586a 
 
 ### Download pretrained resnet101 weights
 
