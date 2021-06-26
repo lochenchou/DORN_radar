@@ -28,7 +28,6 @@ After modifying some paths in `train_nusc.py` and `trian_nusc_radar.py`, directl
 
 The code for evaluation and the pretrained weight file to meet the evaluation results in the paper will be updated soon.
 
-
-
+The train_scene and val_scene txt files in ./list/nusc/ are the train/val splits I used in the paper. The reason why I used my own splits instead of official train/val splits was just because I didn't realize there are official ones at the time I conducted the experiments.
 
 
