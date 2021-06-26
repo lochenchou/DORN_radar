@@ -19,13 +19,13 @@ pypardiso is highly recommended, otherwise one could have similar result via sps
 
 ### Download pretrained resnet101 weights
 
-Please download pretrained ResNet101 weight and put the .pth file in pretrained_weight dir. At the same time, please modify the weight path in `model/resnet.py`
+Please download the pretrained ResNet101 weight file and modify the weight path in `model/resnet.py`.
 
 ### Train baseline model and proposed model on nuScenes
 
 After modifying some paths in `train_nusc.py` and `trian_nusc_radar.py`, directly call the .py files for training the baseline model and the proposed model on nuScenes.
 
-The code for evaluation and pretrained weight to meet the evaluation results in the paper will be updated soon.
+The code for evaluation and the pretrained weight file to meet the evaluation results in the paper will be updated soon.
 
 
 
