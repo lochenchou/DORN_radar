@@ -94,7 +94,6 @@ def load_data(sample):
     radar = pil_loader(sample['radar_path'], rgb=False)
 
     rgb = rgb.resize((800,450))
-    sparse = resize_depth(sparse)
     radar = resize_depth(radar)
 
     rgb = np.array(rgb).astype(np.float32) / 255.
