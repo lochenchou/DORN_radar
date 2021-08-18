@@ -1,6 +1,6 @@
 # Depth Estimation from Monocular Images and Sparse Radar using Deep Ordinal Regression Network
 
-Official implementation of "Depth Estimation from Monocular Images and Sparse Radar using Deep Ordinal Regression Network", an accepted paper of ICIP2021.
+Official implementation of "Depth Estimation from Monocular Images and Sparse Radar using Deep Ordinal Regression Network" (https://arxiv.org/abs/2107.07596), an accepted paper of ICIP2021.
 
 
 
