@@ -94,6 +94,8 @@ def load_data(sample):
     radar = pil_loader(sample['radar_path'], rgb=False)
 
     rgb = rgb.resize((800,450))
+    if np.array(sparse).shape != (450,800):
+        sparse = resize_depth(sparse)
     radar = resize_depth(radar)
 
     rgb = np.array(rgb).astype(np.float32) / 255.
@@ -152,15 +154,20 @@ class NuScenesLoader(Dataset):
                  data_root='/datasets/nuscenes/v1.0-trainval',
                  cam_channels=['CAM_FRONT'],
                  mode='train', size=(350, 800), nsweeps=5,
-                 scene_version=='v1.0-trainval'):
+                 scene_version='v1.0-trainval',
+                 nusc=None):
         super(NuScenesLoader, self).__init__()
         
         self.mode = mode
         self.size = size
         self.nsweeps = nsweeps
         
+        if nusc == None:
+            self.nusc = NuScenes(version=scene_version, dataroot=data_root, verbose=True)
+        else:
+            self.nusc = nusc
+        
         self.scene_token_list = read_list(scene_token_list)
-        self.nusc = NuScenes(version=scene_version, dataroot=data_root, verbose=True)
         self.samples = get_samples(self.nusc, self.scene_token_list, cam_channels)
         
         print('mode: {} with {} samples'.format(mode, len(self.samples)))
