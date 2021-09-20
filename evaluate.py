@@ -22,6 +22,8 @@ from loss import OrdinalRegressionLoss
 
 def filter_radar_delta(trg, src, delta=1.25):
     delta = float(delta)
+    
+    # calculate upper and lower bound
     mask_lb = np.array(src.cpu()) > (np.array(trg.cpu()/delta))
     mask_ub = np.array(src.cpu()) < (np.array(trg.cpu()*delta))
     
@@ -58,10 +60,10 @@ if not os.path.exists(test_dir):
 print('OUTPUT_DIR = {}'.format(output_dir))
 
 # init dataloader
-MODE = 'test'
-DATA_ROOT = '/datasets/nuscenes/v1.0-test'
-SCENE_VERSION = 'v1.0-test'
-SCENE_TOKEN_LIST = './list/nusc/official_test_scene.txt'
+MODE = 'val'
+DATA_ROOT = '/datasets/nuscenes/v1.0-trainval'
+SCENE_VERSION = 'v1.0-trainval'
+SCENE_TOKEN_LIST = './list/nusc/val_scene.txt'
 CAM_CHANNELS=['CAM_FRONT']
 
 nusc =  NuScenes(version=SCENE_VERSION, dataroot=DATA_ROOT, verbose=True)
