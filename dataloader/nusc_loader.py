@@ -151,7 +151,8 @@ class NuScenesLoader(Dataset):
                  scene_token_list='./list/nusc/train_scene.txt', 
                  data_root='/datasets/nuscenes/v1.0-trainval',
                  cam_channels=['CAM_FRONT'],
-                 mode='train', size=(350, 800), nsweeps=5):
+                 mode='train', size=(350, 800), nsweeps=5,
+                 scene_version=='v1.0-trainval'):
         super(NuScenesLoader, self).__init__()
         
         self.mode = mode
@@ -159,7 +160,7 @@ class NuScenesLoader(Dataset):
         self.nsweeps = nsweeps
         
         self.scene_token_list = read_list(scene_token_list)
-        self.nusc = NuScenes(version='v1.0-trainval', dataroot=data_root, verbose=True)
+        self.nusc = NuScenes(version=scene_version, dataroot=data_root, verbose=True)
         self.samples = get_samples(self.nusc, self.scene_token_list, cam_channels)
         
         print('mode: {} with {} samples'.format(mode, len(self.samples)))
@@ -223,6 +224,8 @@ class NuScenesLoader(Dataset):
         if self.mode == 'train':
             data = self.train_procedure(data)
         elif self.mode == 'val':
+            data = self.val_procedure(data)
+        elif self.mode == 'test':
             data = self.val_procedure(data)
             
             
