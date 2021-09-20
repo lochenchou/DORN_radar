@@ -37,3 +37,20 @@ After modifying some paths in `train_nusc.py` and `trian_nusc_radar.py`, directl
 The train_scene and val_scene txt files in ./list/nusc/ are the train/val splits I used in the paper. The reason why I used my own splits instead of official train/val splits was just because I didn't realize there are official ones at the time I conducted the experiments.
 
 
+
+## Citation
+
+If you find this work useful in your research, please consider citing:
+```
+@INPROCEEDINGS{9506550,
+  author={Lo, Chen-Chou and Vandewalle, Patrick},
+  booktitle={2021 IEEE International Conference on Image Processing (ICIP)}, 
+  title={Depth Estimation From Monocular Images And Sparse Radar Using Deep Ordinal Regression Network}, 
+  year={2021},
+  volume={},
+  number={},
+  pages={3343-3347},
+  doi={10.1109/ICIP42928.2021.9506550}
+}
+```
+
