@@ -77,7 +77,7 @@ test_set = NuScenesLoader(scene_token_list=SCENE_TOKEN_LIST,
 test_loader = torch.utils.data.DataLoader(test_set, batch_size=BATCH_SIZE, shuffle=True, num_workers=WORKERS)
 
 # create model
-CHECKPOINT = os.path.join('./pretrained_weight/','dorn_radar.pth.tar')
+CHECKPOINT = os.path.join('./pretrained_weight','dorn_radar.pth.tar')
 model = torch.load(CHECKPOINT,map_location="cpu")
 
 
