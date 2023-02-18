@@ -42,13 +42,11 @@ The train_scene and val_scene txt files in ./list/nusc/ are the train/val splits
 
 If you find this work useful in your research, please consider citing:
 ```
-@INPROCEEDINGS{9506550,
+@inproceedings{DORN_radar,
   author={Lo, Chen-Chou and Vandewalle, Patrick},
-  booktitle={2021 IEEE International Conference on Image Processing (ICIP)}, 
+  booktitle={Proceedings of the IEEE International Conference on Image Processing}, 
   title={Depth Estimation From Monocular Images And Sparse Radar Using Deep Ordinal Regression Network}, 
   year={2021},
-  volume={},
-  number={},
   pages={3343-3347},
   doi={10.1109/ICIP42928.2021.9506550}
 }
